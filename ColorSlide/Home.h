@@ -21,11 +21,14 @@
 @property (strong, nonatomic) IBOutlet UISlider *sliderRojo;
 @property (strong, nonatomic) IBOutlet UISlider *sliderVerde;
 @property (strong, nonatomic) IBOutlet UISlider *sliderAzul;
+@property (strong, nonatomic) IBOutlet UISlider *sliderAlpha;
+
 
 //Acciones
 - (IBAction)accionRojo:(id)sender;
 - (IBAction)accionVerde:(id)sender;
 - (IBAction)accionAzul:(id)sender;
+- (IBAction)accionAlpha:(id)sender;
 
 
 @end
