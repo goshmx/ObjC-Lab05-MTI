@@ -65,6 +65,7 @@ NSTimer *myTimer;
 }
 
 - (IBAction)accionAlpha:(id)sender {
+    self.sliderAlpha.value = round(self.sliderAlpha.value);
     [myTimer invalidate];
     myTimer = nil;
     if(self.sliderAlpha.value){
