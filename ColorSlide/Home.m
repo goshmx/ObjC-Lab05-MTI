@@ -7,6 +7,7 @@
 //
 
 #import "Home.h"
+#import "QuartzCore/QuartzCore.h"
 
 float rojo = 0;
 float verde = 0;
@@ -25,7 +26,8 @@ NSTimer *myTimer;
     // Do any additional setup after loading the view, typically from a nib.
     //float angleInRadians = 270 * (M_PI/180);
     //self.sliderAzul.transform = CGAffineTransformMakeRotation(angleInRadians);
-    
+    self.Color.layer.masksToBounds = YES;
+    self.Color.layer.cornerRadius = 115;
    
 }
 
@@ -68,8 +70,9 @@ NSTimer *myTimer;
     self.sliderAlpha.value = round(self.sliderAlpha.value);
     [myTimer invalidate];
     myTimer = nil;
+    self.Color.alpha = 1;
     if(self.sliderAlpha.value){
-        myTimer = [NSTimer scheduledTimerWithTimeInterval:(1/self.sliderAlpha.value) target:self selector:@selector(blink) userInfo:nil repeats:YES];
+        myTimer = [NSTimer scheduledTimerWithTimeInterval:(0.5/self.sliderAlpha.value) target:self selector:@selector(blink) userInfo:nil repeats:YES];
     }
     
 }
